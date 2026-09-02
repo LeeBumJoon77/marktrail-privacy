@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MarkTrail</title>
+    <style>
+        :root {
+            --bg: #f5f7f0;
+            --card: #ffffff;
+            --line: #e0ddd0;
+            --text: #242a24;
+            --sub: #616960;
+            --accent: #cc9433;
+            --celadon: #6b9385;
+            --celadon-soft: #e6ede9;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+            color: var(--text);
+            background: radial-gradient(1200px 500px at 10% -10%, #e4ede4 0%, transparent 55%),
+                        radial-gradient(900px 420px at 95% 10%, #fbf1dd 0%, transparent 60%),
+                        var(--bg);
+            padding: 20px;
+        }
+
+        .wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 32px 28px;
+            box-shadow: 0 16px 36px rgba(60, 70, 55, 0.12);
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--celadon);
+            background: var(--celadon-soft);
+            border-radius: 999px;
+            padding: 5px 14px;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 34px;
+            background: linear-gradient(135deg, #e9c876, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tagline {
+            margin: 0 0 26px;
+            color: var(--sub);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 26px;
+        }
+
+        @media (min-width: 560px) {
+            .features { grid-template-columns: 1fr 1fr; }
+        }
+
+        .feature {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 16px;
+            background: #fbfcf9;
+        }
+
+        .feature .icon {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .feature h2 {
+            margin: 0 0 4px;
+            font-size: 15px;
+            color: #4a5c4e;
+        }
+
+        .feature p {
+            margin: 0;
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: var(--sub);
+        }
+
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .cta a {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 12px 20px;
+            border-radius: 12px;
+        }
+
+        .cta a.primary {
+            color: #fff;
+            background: linear-gradient(135deg, #e9c876, var(--accent));
+        }
+
+        .cta a.secondary {
+            color: var(--celadon);
+            background: var(--celadon-soft);
+        }
+
+        .footer {
+            margin-top: 22px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            font-size: 12.5px;
+            color: var(--sub);
+        }
+
+        .footer a {
+            color: var(--sub);
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <span class="badge">국보 · 명승 · 천연기념물</span>
+        <h1>MarkTrail</h1>
+        <p class="tagline">실제 한국 문화유산을 방문하고 나만의 도감을 채워보세요. 가까운 국보, 보물 유산을 둘러보고 방문 인증을 하면 스탬프가 쌓여요.</p>
+
+        <div class="features">
+            <div class="feature">
+                <div class="icon">🗺️</div>
+                <h2>지도로 탐색</h2>
+                <p>지역별, 목록별, 지도로 전국의 국가유산을 자유롭게 둘러볼 수 있어요.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">📍</div>
+                <h2>GPS 방문 인증</h2>
+                <p>실제 현장에 도착하면 방문 확인 스탬프를 찍을 수 있어요.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">📖</div>
+                <h2>나만의 도감</h2>
+                <p>방문한 유산을 시대별로 모아 나만의 도감을 완성해보세요.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🌐</div>
+                <h2>다국어 지원</h2>
+                <p>한국어, 영어, 일본어, 중국어, 스페인어로 이용할 수 있어요.</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <a class="secondary" href="support.html">지원(Support)</a>
+            <a class="secondary" href="privacy.html">개인정보처리방침</a>
+        </div>
+
+        <p class="footer">MarkTrail · © 2026 LeeBumJoon</p>
+    </main>
+</body>
+</html>

@@ -1,180 +1,91 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>MarkTrail</title>
-    <style>
-        :root {
-            --bg: #f5f7f0;
-            --card: #ffffff;
-            --line: #e0ddd0;
-            --text: #242a24;
-            --sub: #616960;
-            --accent: #cc9433;
-            --celadon: #6b9385;
-            --celadon-soft: #e6ede9;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
-            color: var(--text);
-            background: radial-gradient(1200px 500px at 10% -10%, #e4ede4 0%, transparent 55%),
-                        radial-gradient(900px 420px at 95% 10%, #fbf1dd 0%, transparent 60%),
-                        var(--bg);
-            padding: 20px;
-        }
-
-        .wrap {
-            max-width: 760px;
-            margin: 0 auto;
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 20px;
-            padding: 32px 28px;
-            box-shadow: 0 16px 36px rgba(60, 70, 55, 0.12);
-        }
-
-        .badge {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--celadon);
-            background: var(--celadon-soft);
-            border-radius: 999px;
-            padding: 5px 14px;
-            margin-bottom: 14px;
-        }
-
-        h1 {
-            margin: 0 0 10px;
-            font-size: 34px;
-            background: linear-gradient(135deg, #e9c876, var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .tagline {
-            margin: 0 0 26px;
-            color: var(--sub);
-            font-size: 17px;
-            line-height: 1.6;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-bottom: 26px;
-        }
-
-        @media (min-width: 560px) {
-            .features { grid-template-columns: 1fr 1fr; }
-        }
-
-        .feature {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 16px;
-            background: #fbfcf9;
-        }
-
-        .feature .icon {
-            font-size: 22px;
-            margin-bottom: 6px;
-        }
-
-        .feature h2 {
-            margin: 0 0 4px;
-            font-size: 15px;
-            color: #4a5c4e;
-        }
-
-        .feature p {
-            margin: 0;
-            font-size: 13.5px;
-            line-height: 1.55;
-            color: var(--sub);
-        }
-
-        .cta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
-
-        .cta a {
-            display: inline-block;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14.5px;
-            padding: 12px 20px;
-            border-radius: 12px;
-        }
-
-        .cta a.primary {
-            color: #fff;
-            background: linear-gradient(135deg, #e9c876, var(--accent));
-        }
-
-        .cta a.secondary {
-            color: var(--celadon);
-            background: var(--celadon-soft);
-        }
-
-        .footer {
-            margin-top: 22px;
-            padding-top: 16px;
-            border-top: 1px solid var(--line);
-            font-size: 12.5px;
-            color: var(--sub);
-        }
-
-        .footer a {
-            color: var(--sub);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MarkTrail</title>
+<meta name="description" content="Collect stamps at Korea&#x27;s heritage sites">
+<meta property="og:title" content="MarkTrail">
+<meta property="og:description" content="Collect stamps at Korea&#x27;s heritage sites">
+<meta property="og:image" content="assets/icon.png">
+<style>
+  :root { --a: #5E8E7B; --ink: #33302C; --sub: #6F675E; --card: rgba(255,255,255,.72); }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+         color: var(--ink); background: linear-gradient(170deg, #FBF5E6 0%, #DCEBE3 100%); min-height: 100vh; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 26px 20px 72px; }
+  .langbar { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; margin-bottom: 18px; }
+  .langbar button { border: 0; background: var(--card); color: var(--sub); border-radius: 999px;
+                     padding: 6px 12px; font-size: .82rem; cursor: pointer; }
+  .langbar button[aria-pressed="true"] { background: var(--a); color: #fff; font-weight: 700; }
+  header { text-align: center; }
+  .icon { width: 132px; height: 132px; border-radius: 30px; box-shadow: 0 12px 30px rgba(40,30,20,.18); }
+  h1 { font-size: 2.3rem; margin: 22px 0 10px; letter-spacing: -0.5px; }
+  .tag { font-size: 1.12rem; color: var(--sub); margin: 0 auto 26px; max-width: 30em; line-height: 1.5; }
+  .cta { display: inline-block; background: var(--a); color: #fff; text-decoration: none; font-weight: 700;
+          padding: 15px 34px; border-radius: 999px; box-shadow: 0 8px 20px rgba(40,30,20,.16); }
+  .cta:hover { filter: brightness(1.06); }
+  .shots { display: flex; gap: 16px; overflow-x: auto; padding: 44px 4px 8px; scroll-snap-type: x mandatory; }
+  .shots img { width: 250px; flex: 0 0 auto; border-radius: 18px; box-shadow: 0 10px 26px rgba(40,30,20,.16); scroll-snap-align: center; background: #fff; }
+  .feats { display: grid; gap: 14px; margin-top: 40px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .feat { background: var(--card); border-radius: 20px; padding: 22px 20px; }
+  .feat h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .feat p { margin: 0; color: var(--sub); font-size: .96rem; line-height: 1.55; }
+  .note { text-align: center; margin-top: 30px; color: var(--sub); font-size: .88rem; }
+  footer { margin-top: 42px; text-align: center; color: var(--sub); font-size: .9rem; line-height: 1.9; }
+  footer a { color: var(--a); text-decoration: none; margin: 0 10px; font-weight: 600; }
+</style>
 </head>
 <body>
-    <main class="wrap">
-        <span class="badge">국보 · 명승 · 천연기념물</span>
-        <h1>MarkTrail</h1>
-        <p class="tagline">실제 한국 문화유산을 방문하고 나만의 도감을 채워보세요. 가까운 국보, 보물 유산을 둘러보고 방문 인증을 하면 스탬프가 쌓여요.</p>
-
-        <div class="features">
-            <div class="feature">
-                <div class="icon">🗺️</div>
-                <h2>지도로 탐색</h2>
-                <p>지역별, 목록별, 지도로 전국의 국가유산을 자유롭게 둘러볼 수 있어요.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">📍</div>
-                <h2>GPS 방문 인증</h2>
-                <p>실제 현장에 도착하면 방문 확인 스탬프를 찍을 수 있어요.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">📖</div>
-                <h2>나만의 도감</h2>
-                <p>방문한 유산을 시대별로 모아 나만의 도감을 완성해보세요.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🌐</div>
-                <h2>다국어 지원</h2>
-                <p>한국어, 영어, 일본어, 중국어, 스페인어로 이용할 수 있어요.</p>
-            </div>
-        </div>
-
-        <div class="cta">
-            <a class="secondary" href="support.html">지원(Support)</a>
-            <a class="secondary" href="privacy.html">개인정보처리방침</a>
-        </div>
-
-        <p class="footer">MarkTrail · © 2026 LeeBumJoon</p>
-    </main>
+<div class="wrap">
+  <nav class="langbar"><button type="button" data-lang="en">English</button><button type="button" data-lang="ko">한국어</button><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="zh-Hans">简体</button><button type="button" data-lang="zh-Hant">繁體</button><button type="button" data-lang="es">Español</button><button type="button" data-lang="fr">Français</button></nav>
+  <header>
+    <img class="icon" src="assets/icon.png" alt="MarkTrail">
+    <h1>MarkTrail</h1>
+    <p class="tag" data-en="Collect stamps at Korea&#x27;s heritage sites" data-ko="우리 문화유산을 찾아가 스탬프를 모아요" data-ja="韓国の文化遺産をめぐってスタンプを集めよう" data-zh-Hans="走访韩国文化遗产，集满你的印章" data-zh-Hant="走訪韓國文化遺產，集滿你的印章" data-es="Colecciona sellos en el patrimonio de Corea" data-fr="Collectionnez des tampons au fil du patrimoine coréen">Collect stamps at Korea&#x27;s heritage sites</p>
+    <a class="cta" href="https://apps.apple.com/app/id6805505380" data-en="Get it on the App Store" data-ko="App Store에서 받기" data-ja="App Storeで入手" data-zh-Hans="在 App Store 下载" data-zh-Hant="在 App Store 下載" data-es="Consíguela en el App Store" data-fr="Télécharger sur l&#x27;App Store">Get it on the App Store</a>
+  </header>
+  <div class="shots"><img src="assets/shot1-en.jpg" alt="MarkTrail" loading="lazy" data-src-en="assets/shot1-en.jpg" data-src-ko="assets/shot1-ko.jpg" data-src-ja="assets/shot1-ja.jpg" data-src-zh-Hans="assets/shot1-zh-Hans.jpg" data-src-zh-Hant="assets/shot1-zh-Hant.jpg" data-src-es="assets/shot1-es.jpg" data-src-fr="assets/shot1-fr.jpg"><img src="assets/shot2-en.jpg" alt="MarkTrail" loading="lazy" data-src-en="assets/shot2-en.jpg" data-src-ko="assets/shot2-ko.jpg" data-src-ja="assets/shot2-ja.jpg" data-src-zh-Hans="assets/shot2-zh-Hans.jpg" data-src-zh-Hant="assets/shot2-zh-Hant.jpg" data-src-es="assets/shot2-es.jpg" data-src-fr="assets/shot2-fr.jpg"><img src="assets/shot3-en.jpg" alt="MarkTrail" loading="lazy" data-src-en="assets/shot3-en.jpg" data-src-ko="assets/shot3-ko.jpg" data-src-ja="assets/shot3-ja.jpg" data-src-zh-Hans="assets/shot3-zh-Hans.jpg" data-src-zh-Hant="assets/shot3-zh-Hant.jpg" data-src-es="assets/shot3-es.jpg" data-src-fr="assets/shot3-fr.jpg"></div>
+  <div class="feats"><div class="feat"><h3 data-en="Heritage sites near you" data-ko="내 근처의 문화유산" data-ja="近くの文化遺産" data-zh-Hans="你附近的文化遗产" data-zh-Hant="你附近的文化遺產" data-es="Patrimonio cerca de ti" data-fr="Le patrimoine près de vous">Heritage sites near you</h3><p data-en="Open the app and see the closest ones, with the distance left" data-ko="앱을 열면 가까운 유산이 남은 거리와 함께 바로 보여요" data-ja="アプリを開けば、近い遺産が残りの距離とともにすぐ見つかります" data-zh-Hans="打开应用，就能看到最近的遗产和剩余距离" data-zh-Hant="開啟App，就能看到最近的遺產和剩餘距離" data-es="Abre la app y ve los sitios más cercanos con la distancia que falta" data-fr="Ouvrez l&#x27;app et voyez les sites les plus proches, avec la distance">Open the app and see the closest ones, with the distance left</p></div><div class="feat"><h3 data-en="Be there. Get the stamp." data-ko="가서, 스탬프를 받으세요" data-ja="行って、スタンプをもらおう" data-zh-Hans="亲自到场，领取印章" data-zh-Hant="親自到場，領取印章" data-es="Ve allí. Gana el sello." data-fr="Allez-y. Gagnez le tampon.">Be there. Get the stamp.</h3><p data-en="Your visit is confirmed by GPS, right on the spot" data-ko="현장에서 GPS로 방문을 확인해요" data-ja="現地でGPSが訪問を確認します" data-zh-Hans="在现场用GPS确认你的到访" data-zh-Hant="在現場用GPS確認你的造訪" data-es="El GPS confirma tu visita en el mismo lugar" data-fr="Le GPS confirme votre visite sur place">Your visit is confirmed by GPS, right on the spot</p></div><div class="feat"><h3 data-en="Your stamp passport" data-ko="나의 스탬프 여권" data-ja="わたしのスタンプ手帳" data-zh-Hans="我的印章护照" data-zh-Hant="我的印章護照" data-es="Tu pasaporte de sellos" data-fr="Votre passeport de tampons">Your stamp passport</h3><p data-en="Every place you have been, stamped on one map to share" data-ko="다녀온 곳을 지도 한 장에 도장으로 찍어 공유해요" data-ja="訪れた場所を一枚の地図にスタンプして共有" data-zh-Hans="把去过的地方盖在一张地图上，分享给朋友" data-zh-Hant="把去過的地方蓋在一張地圖上，分享給朋友" data-es="Cada lugar visitado, sellado en un mapa para compartir" data-fr="Chaque lieu visité, tamponné sur une carte à partager">Every place you have been, stamped on one map to share</p></div></div>
+  <p class="note" data-en="Free, with ads. No account needed." data-ko="무료이며 광고가 있습니다. 계정이 필요 없습니다." data-ja="無料（広告あり）。アカウントは不要です。" data-zh-Hans="免费，含广告。无需注册账号。" data-zh-Hant="免費，含廣告。無需註冊帳號。" data-es="Gratis, con anuncios. Sin cuenta." data-fr="Gratuit, avec publicités. Sans compte.">Free, with ads. No account needed.</p>
+  <footer>
+    <a href="privacy.html" data-en="Privacy Policy" data-ko="개인정보처리방침" data-ja="プライバシーポリシー" data-zh-Hans="隐私政策" data-zh-Hant="隱私權政策" data-es="Política de privacidad" data-fr="Politique de confidentialité">Privacy Policy</a>
+    <a href="support.html" data-en="Support" data-ko="고객 지원" data-ja="サポート" data-zh-Hans="支持" data-zh-Hant="支援" data-es="Soporte" data-fr="Assistance">Support</a>
+    <a href="https://apps.apple.com/developer/bumjoon-lee/id6801095554" data-en="More apps" data-ko="다른 앱 보기" data-ja="ほかのアプリ" data-zh-Hans="更多应用" data-zh-Hant="更多App" data-es="Más apps" data-fr="Autres apps">More apps</a>
+    <div style="margin-top:14px">Bumjoon Lee &middot; mall77@naver.com<br>&copy; 2026 Bumjoon Lee</div>
+  </footer>
+</div>
+<script>
+  var LANGS = ["en", "ko", "ja", "zh-Hans", "zh-Hant", "es", "fr"];
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll(".shots img").forEach(function (im) {
+      var v = im.getAttribute("data-src-" + lang) || im.getAttribute("data-src-en");
+      if (v) im.src = v;
+    });
+    document.querySelectorAll("[data-en]").forEach(function (el) {
+      var v = el.getAttribute("data-" + lang) || el.getAttribute("data-en");
+      if (v) el.textContent = v;
+    });
+    document.querySelectorAll(".langbar button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false");
+    });
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+  function detect() {
+    try { var s = localStorage.getItem("lang"); if (s && LANGS.indexOf(s) >= 0) return s; } catch (e) {}
+    var n = (navigator.language || "en").toLowerCase();
+    if (n.indexOf("ko") === 0) return "ko";
+    if (n.indexOf("ja") === 0) return "ja";
+    if (n.indexOf("zh") === 0) return (n.indexOf("tw") > 0 || n.indexOf("hk") > 0 || n.indexOf("hant") > 0) ? "zh-Hant" : "zh-Hans";
+    if (n.indexOf("es") === 0) return "es";
+    if (n.indexOf("fr") === 0) return "fr";
+    return "en";
+  }
+  document.querySelectorAll(".langbar button").forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.dataset.lang); });
+  });
+  apply(detect());
+</script>
 </body>
 </html>
